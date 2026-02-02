@@ -1,0 +1,27 @@
+services:
+  # The Graph Database (For Fraud Ring Analysis)
+  neo4j:
+    image: neo4j:latest
+    container_name: fraud-graph-db
+    ports:
+      - "7474:7474" # Web Interface
+      - "7687:7687" # Bolt Protocol (for Python/Java to connect)
+    environment:
+      - NEO4J_AUTH=neo4j/password
+    volumes:
+      - ./neo4j/data:/data
+
+  # The Message Broker (For Asynchronous Processing)
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: fraud-message-broker
+    ports:
+      - "5672:5672"   # Messaging port
+      - "15672:15672" # Management UI (Dashboard)
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+
+networks:
+  fraud-network:
+    driver: bridge

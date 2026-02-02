@@ -1,0 +1,33 @@
+# --- Python Environment ---
+venv/
+env/
+.venv/
+bin/
+lib/
+share/
+pyvenv.cfg
+*.py[cod]
+__pycache__/
+
+# --- Machine Learning & Data ---
+# Exclude raw data if the file is large (>50MB)
+data/*.csv
+data/*.json
+
+# Exclude generated model files (keep these local)
+scripts/*.pkl
+scripts/*.joblib
+scripts/*.h5
+
+# --- Security & Secrets ---
+# Never push your passwords or API keys
+.env
+credentials.json
+*.pem
+
+# --- IDE & OS ---
+.vscode/
+.idea/
+.DS_Store
+*.swp
+neo4j/
