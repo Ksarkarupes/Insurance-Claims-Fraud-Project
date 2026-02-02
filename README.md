@@ -19,7 +19,10 @@ This project is a microservices ecosystem designed to detect insurance claims fr
 3. **Intelligence Layer (Worker.py):** Consumes messages, applies a pre-trained ML model, and generates a fraud score.
 4. **Graph Persistence (Neo4j):** Stores the results as a relationship graph for visual analysis.
 
-
+## 📊 Dataset Information
+The model is trained using the **Insurance Claims Dataset** available on Kaggle.
+- **Source:** [Kaggle - Insurance Claims Dataset](https://www.kaggle.com/datasets/mexwell/insurance-claims)
+- **Content:** Includes 1,000 records of insurance claims with features like policy details, incident severity, and claim amounts.
 
 ---
 
